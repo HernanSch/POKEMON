@@ -1,39 +1,34 @@
-/*const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
-//const value = 1;
-
-for (let i = 0; i <= 151; i++) {   
-
-    fetch(baseUrl + i)
-    .then(res => res.json())
-    .then(pokemon => {
-        //idPokedex(pokemon);
-        console.log(pokemon);
-    })
-}*/
-
-const resultsPokemons = document.querySelector('js_pokemon');
-
+let allPokemons = [];
 
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
-//const value = 1;
 
-function getAllPokemons() {
-    for (let i = 0; i <= 151; i++) {   
 
-        fetch(baseUrl + i)
+const getAllPokemons = async () => {
+    for (let i = 1; i <= 151; i++) {   
+
+        /*const res = await fetch(baseUrl + i)
+        const pokemon = await res.json()
+        allPokemons.push(pokemon);*/
+        await fetch(baseUrl + i)
         .then(res => res.json())
-        .then(pokemon => {
-            //idPokedex(pokemon);
-            console.log(pokemon);
-            printAllPokemons();
-        })
+        .then(pokemon =>
+            allPokemons.push(pokemon)
+                        
+        )  
+    }
+    runAllPokemons(allPokemons);    
+}
+
+
+const runAllPokemons = (pokemons) => {
+    //console.log(pokemons);
+    for (const pokemon of pokemons) {
+        console.log(pokemon);
+        const div$$ = document.createElement('div');        
+        div$$.innerHTML = `<h3>${pokemon.name}</h3><img class="imagen" src='${pokemon.sprites.back_default}'></img>`
+        document.body.appendChild(div$$);
     }
 }
 
-function printAllPokemons(){
-    pokemon.innerHTML
-}
 
-
-
-
+getAllPokemons();
