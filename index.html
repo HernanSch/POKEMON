@@ -8,12 +8,44 @@
     <script src="pokedex.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
+    <link href="/assets/favicon.ico" rel="icon" type="image/x-icon" />
+    
 </head>
 
 <body>
-    <div class="container">
-        <h1>Pokedex</h1>
+    <header class="container_2">
+        
+        <img class="logo" src="./assets/International_Pokémon_logo.svg.webp" alt="">
+        <img src="./assets/35f248b92c15cb3cf13cb867d40d09eb.gif" alt="">
         <ol class="js_pokemon" id="pokedex"></ol>
+    </header>
+    <div class="buscador">
+        <input class="button_input" type="text" placeholder="Ej. Vegeta">
+        <button class="button_bus" type="button">Busca tu Pokemon</button>        
+        <button class="button_home" onclick="location.href='http://127.0.0.1:5501/index.html'"><img class="home_imagen" src="./assets/home2.png"height ="30" width="30" ></button>
+    </div>
+ 
+    <div class="pokemon-gallery">
+        <div class="container">
+            <div class="headCard">
+                <h3 class="name"></h3>
+                <img class="imagen" src="" alt="">
+            </div>
+            <div class="profileList">
+                <ol class="profileList2">
+                    <li><p class="pAttack"></p></li>
+                    <li><p class="pTypeAttack"></p></li>
+                    <li><p class="hp"></p></li>
+                    <li><p class="damage"></p></li>
+                    <li><p class="defense"></p></li>
+                    <li><p class="specialAttack"></p></li>
+                    <li><p class="specialDefense"></p></li>
+                    <li><p class="speed"></p></li>
+                </ol>
+            </div>  
+
+        </div>
+
     </div>
     
 </body>
