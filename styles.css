@@ -1,5 +1,5 @@
 body{
-    /*background-image: url("./assets/fondepoke5.jpeg");*/
+    background-image: url("./assets/fondepoke5.jpeg");
     /*width: 100%;
     height: 100%;*/
     background: -webkit-linear-gradient(left,#FDFD96, #AEC6CF);
@@ -8,8 +8,8 @@ body{
 .pokemon-gallery{
     
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-around;
     padding: 15px;
     
     /*border-bottom: 1px solid rgba(153, 153, 153, 0.383);
@@ -18,22 +18,22 @@ body{
 }
 
 .container{
-    
-    background-color: rgb(182, 209, 209);
-    border: 1px solid black ;
-    font-family:Verdana, Geneva, Tahoma, sans-serif ;
-    /*max-width: 400px;*/
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    margin: 3% 1% 3% 1%;
-    border-radius: 10px;
-    border-bottom: 1px solid rgba(153, 153, 153, 0.383);
+    max-width: 400px;
+    background: -webkit-linear-gradient(top left,#AEC6CF,#dd3207);
+    border: 2px solid black ;    
+    margin: 1%;
+    border-radius: 15px;
+    border-bottom: 2px solid rgba(153, 153, 153, 0.383);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    padding: 90px;    
-    
+    overflow:hidden; /* Prueba de hover en carta */
+    padding: 20px;    
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;  
+    text-align: center;  
 }
-.container_2{
+
+
+.header{
     background-image: url("./assets/tile.webp");
     display: flex;
     justify-content: center;
@@ -42,33 +42,69 @@ body{
     border-color: black;
     
 }
-.buscador{
+.container_button{
     display: flex;
-    justify-content: left;
-    margin: 3% 0 15px 60px;
-    width: 300px;
-    height: 40px;
-    border-radius: 10px;   
+    justify-content:center;
+    margin: 3%;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;    
+}
+
+.button_home{
+    display: flex;
     
+    width: 60px;
+    height: 58px;
+      
+    overflow: hidden;
+    transition: 1s;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(153, 153, 153, 0.383);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin: 2%;
+    background-color: hsl(48, 92%, 53%);
     
+}
+.button_home:hover{
+    background: hsl(48, 92%, 53%);
+    box-shadow: 0 0 10px hsl(48, 92%, 53%), 0 0 40px hsl(48, 92%, 53%), 0 0 80px hsl(48, 92%, 53%);
+}
+
+.button_bus{
+    
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: x-large;
+    width: 290px;
+    height: 58px;
+    margin: 2%;
+    color: rgb(0, 0, 0);   
+    overflow: hidden;
+    transition: 1s;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(153, 153, 153, 0.383);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);    
+    background-color: #ff4000;
+    color: rgb(255, 255, 255);
+}
+
+.button_bus:hover{
+    background: #ff4000;
+    box-shadow: 0 0 10px #ff4000, 0 0 40px #ff4000, 0 0 80px #ff4000;
 }
 
 .button_input{
+    display:flex;
+    font-size:x-large;    
+    text-align: center;
+    width: 300px;
+    height: 52px;
     border-radius: 10px;
     border-bottom: 1px solid rgba(153, 153, 153, 0.383);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    
-}
-
-
-.button_bus{
-    background-color: rgb(164, 98, 6);
-    color: white;
-    width: 800px;
-    border-radius: 10px;
-    border-bottom: 1px solid rgba(153, 153, 153, 0.383);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    
+    margin: 2%;
 }
 
 .logo{
@@ -76,49 +112,66 @@ body{
     height: 25%;
 }
 
-
-
-.button_home{
-    background-color: rgb(255, 255, 255);
-    color: white;
-    width: 80px;
-    border-radius: 10px;
-    border-bottom: 1px solid rgba(153, 153, 153, 0.383);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+.imagen{
+    width: 180px;
+    height: 180px;
+    background-color: #f6ca1a;
+    border:1px solid rgb(0, 0, 0);
+    background-image: url(./assets/marco.jpg);
+    background-size:100% 100%;
+    background-repeat: no-repeat;
     
+    
+    
+}
+
+.home_imagen{
+    max-width: 100%;
+    text-align: center;
+    
+}
+
+.perfil{
+    position: relative;    
+    font-size:small;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    border-top:1px solid rgb(0, 0, 0);
+    border-bottom:1px solid rgb(0, 0, 0);    
+    list-style: none;
+    padding-left: 0;  
+    
+    
+}
+
+.perfil li {
+    position: relative;
+    padding-left: 20px;
+    
+}
+
+.perfil li:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-image: url('./assets/imagenli.png');
+    
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .name{
-    margin-top: -35%;
-    display: flex;
-    justify-content: center;
-}
-
-.imagen{
-    margin-top: 5%;
-    display: flex;
-    justify-content: center;
-    width: 200px;
-    height: 200px;
-}
-
-.profileList2{
-    margin-top: 25%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
+    font-size: xx-large;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+  
+    
     
 }
-
-.headCard{
-    background-color: rgb(3, 3, 3);
-}
-
-
-
 
 
 
